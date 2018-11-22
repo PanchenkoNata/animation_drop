@@ -7,18 +7,12 @@
   width: 98vw;
   height: 100vh;
   background: #dddddd;
-  border: 5px solid yellow;
-  position: relative;
 }
 
 .wrapper .container {
-  width: 20vw;
-  height: 80vh;
+  width: 20%;
+  height: 90%;
   margin: 0 auto;
-  background: #ffffff;
-  position: absolute;
-  bottom: 10%;
-  left: 45%;
 }
 
 .wrapper .icicle-container {
@@ -58,12 +52,10 @@
 }
 
 .wrapper .can-container {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
   height: calc(100% / 3);
   background-color: #553388;
+  position: relative;
 }
 
 .wrapper .can-container .water, .wrapper .can-container:after {
@@ -76,12 +68,12 @@
 }
 
 .wrapper .can-container:after {
-  bottom: calc(-100% / 6);
+  bottom: calc(-100% / 6 + 2px);
   background-color: #553388;
 }
 
 .wrapper .can-container .water {
-  top: calc(-100% / 6);
+  top: calc(-100% / 6 + 2px);
   background-color: #00aaff;
   position: relative;
 }
@@ -94,8 +86,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-animation: wave 3s linear none 3s infinite;
-          animation: wave 3s linear none 3s infinite;
+  -webkit-animation: wave 3s linear none 2900ms infinite;
+          animation: wave 3s linear none 2900ms infinite;
 }
 
 @-webkit-keyframes fall {
@@ -124,8 +116,8 @@
     top: 50%;
     left: 50%;
   }
-  2% {
-    border: 2px solid #08a6f5;
+  1% {
+    border: 1px solid #08a6f5;
   }
   100% {
     width: 100%;
@@ -144,8 +136,8 @@
     top: 50%;
     left: 50%;
   }
-  2% {
-    border: 2px solid #08a6f5;
+  1% {
+    border: 1px solid #08a6f5;
   }
   100% {
     width: 100%;

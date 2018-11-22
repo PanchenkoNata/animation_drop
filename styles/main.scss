@@ -7,18 +7,11 @@ $icicle-w: 10px;
 	width: 98vw;
 	height: 100vh;
 	background: #dddddd;
-	border: 5px solid yellow;
-	
-	position: relative;
 
 	.container {
-		width: 20vw;
-		height: 80vh;
+		width: 20%;
+		height: 90%;
 		margin: 0 auto;
-		background: #ffffff;
-		position: absolute;
-		bottom: 10%;
-		left: 45%;
 	}
 
 	.icicle-container {
@@ -55,18 +48,13 @@ $icicle-w: 10px;
 				animation: fall 3s ease-in none infinite;
 			}
 		}
-
-
 	}
 
-
 	.can-container {
-		position: absolute;
-		bottom: 0;
-		left: 0;
 		width: 100%;
 		height: calc(100% / 3);
 		background-color: #553388;
+		position: relative;
 
 		.water, &:after {
 			display: block;
@@ -78,12 +66,12 @@ $icicle-w: 10px;
 		}
 
 		&:after {
-			bottom: calc(-100% / 6);
+			bottom: calc(-100% / 6 + 2px);
 			background-color: #553388;
 		}
 
 		.water {
-			top: calc(-100% / 6);
+			top: calc(-100% / 6 + 2px);
 			background-color: #00aaff;
 			position: relative;
 
@@ -96,7 +84,7 @@ $icicle-w: 10px;
 				top: 50%;
 				left: 50%;
 				
-				animation: wave 3s linear none 3s infinite;
+				animation: wave 3s linear none 2900ms infinite;
 			}
 		}
 	}
@@ -118,8 +106,8 @@ $icicle-w: 10px;
 			top: 50%;
 			left: 50%;
 		}
-		2% {
-			border: 2px solid #08a6f5;
+		1% {
+			border: 1px solid #08a6f5;
 		}
 		100% {
 			width: 100%;
