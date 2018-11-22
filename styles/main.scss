@@ -1,0 +1,112 @@
+$icicle-w: 10px;
+
+.wrapper {
+	width: 98vw;
+	height: 100vh;
+	background: #dddddd;
+	border: 5px solid yellow;
+	
+	position: relative;
+
+	.container {
+		width: 20vw;
+		height: 80vh;
+		margin: 0 auto;
+		background: #ffffff;
+		position: absolute;
+		bottom: 10%;
+		left: 45%;
+		border: 5px solid yellow;
+	}
+
+	.can-container {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 30%;
+		background-color: #553388;
+
+		&:before, &:after {
+			display: block;
+			content: " ";
+			position: absolute;
+			width: 100%;
+			height: 30%;
+			border-radius: 50%;
+			
+		}
+
+		&:before {
+			top: -15%;
+			background-color: #00aaff;
+		}
+
+		&:after {
+			bottom: -15%;
+			background-color: #553388;
+		}
+	}
+
+	.icicle-container {
+		width: #{$icicle-w * 2};
+		height: 70%;
+		position: absolute;
+		top: 0;
+		left: calc(50% - #{$icicle-w});
+		z-index: 100;
+		background-color: green;
+		
+		.icicle {
+			width: 0;
+			height: 0;
+			border-left: #{$icicle-w} solid transparent;
+			border-right: #{$icicle-w} solid transparent;
+			border-top: #{$icicle-w * 10} solid #00aaff;
+			margin: 0 auto;
+		}
+
+		.drop-container {
+			position: absolute;
+			top: 100px;
+			left: 0;
+			width: 100%;
+			height: calc(100% - #{$icicle-w * 10});
+			background-color: #553388;
+
+			.drop {
+				width: #{$icicle-w * 2};
+				height: #{$icicle-w * 2};
+				border-radius: 50%;
+				background-color: #00aaff;
+				position: absolute;
+				bottom: calc(100% -  #{$icicle-w * 2});
+
+				animation: tomb 3s ease-in none 1;
+			}
+		}
+
+
+	}
+
+
+
+	
+	.ball {
+		
+
+		animation: tomb 1s ease-in alternate infinite;
+	}
+
+	@keyframes tomb {
+		from {
+			bottom: calc(100% -  #{$icicle-w * 2});
+		}
+		to {
+			bottom: #{$icicle-w};
+		}
+	}
+
+	
+}
+
