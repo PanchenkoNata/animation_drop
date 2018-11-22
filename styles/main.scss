@@ -1,5 +1,8 @@
 $icicle-w: 10px;
 
+* {
+	box-sizing: border-box;
+}
 .wrapper {
 	width: 98vw;
 	height: 100vh;
@@ -19,41 +22,11 @@ $icicle-w: 10px;
 		border: 5px solid yellow;
 	}
 
-	.can-container {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: 30%;
-		background-color: #553388;
-
-		&:before, &:after {
-			display: block;
-			content: " ";
-			position: absolute;
-			width: 100%;
-			height: 30%;
-			border-radius: 50%;
-			
-		}
-
-		&:before {
-			top: -15%;
-			background-color: #00aaff;
-		}
-
-		&:after {
-			bottom: -15%;
-			background-color: #553388;
-		}
-	}
-
 	.icicle-container {
 		width: #{$icicle-w * 2};
-		height: 70%;
-		position: absolute;
-		top: 0;
-		left: calc(50% - #{$icicle-w});
+		height: calc(100% - 100% / 3);
+		position: relative;
+		margin: 0 auto;
 		z-index: 100;
 		background-color: green;
 		
@@ -63,7 +36,6 @@ $icicle-w: 10px;
 			border-left: #{$icicle-w} solid transparent;
 			border-right: #{$icicle-w} solid transparent;
 			border-top: #{$icicle-w * 10} solid #00aaff;
-			margin: 0 auto;
 		}
 
 		.drop-container {
@@ -82,13 +54,60 @@ $icicle-w: 10px;
 				position: absolute;
 				bottom: calc(100% -  #{$icicle-w * 2});
 
-				animation: tomb 3s ease-in none 1;
+				animation: fall 3s ease-in none infinite;
 			}
 		}
 
 
 	}
 
+
+	.can-container {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: calc(100% / 3);
+		background-color: #553388;
+
+		.water, &:after {
+			display: block;
+			content: " ";
+			position: absolute;
+			width: 100%;
+			height: 30%;
+			border-radius: 50%;
+		}
+
+		&:after {
+			bottom: -15%;
+			background-color: #553388;
+		}
+
+		.water {
+			top: -15%;
+			background-color: #00aaff;
+			position: relative;
+
+			.wave {
+				width: #{$icicle-w * 2};
+				height: 6px;
+				border-radius: 50%;
+				border: 1px solid #000000;
+				background-color: green;
+				position: absolute;
+				top: calc(50% - 3px);
+				left: calc(50% - #{$icicle-w});
+				
+				animation: wave 3s linear none 3s infinite;
+			}
+
+			
+		}
+		
+	}
+
+	
 
 
 	
@@ -98,12 +117,27 @@ $icicle-w: 10px;
 		animation: tomb 1s ease-in alternate infinite;
 	}
 
-	@keyframes tomb {
+	@keyframes fall {
 		from {
 			bottom: calc(100% -  #{$icicle-w * 2});
 		}
 		to {
 			bottom: #{$icicle-w};
+		}
+	}
+
+	@keyframes wave {
+		from {
+			width: #{$icicle-w * 2};
+			height: 6px;
+			top: calc(50% - 3px);
+			left: calc(50% - #{$icicle-w});
+		}
+		to {
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
 		}
 	}
 
